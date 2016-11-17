@@ -1,0 +1,90 @@
+/*
+* CSS Estilo geral Bradesco - Solucao Aqui
+* Desenvolvido por fattoriaweb em: 21/10/2016
+* Desenvolvido por: Fattoriaweb
+*/
+
+
+/* ==========================================================================
+   Login
+   ========================================================================== */
+
+.container--login {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.container--login label { color: #fff; }
+
+.logo-bradescoseguros--login {
+	position: fixed;
+	z-index: 5;
+	bottom: 0px;
+	right: 20px;
+}
+
+.logo-bradescoseguros--login a,
+.logo-bradescoseguros--barratopo a {
+	display: block;
+	width: 102px;
+	height: 110px;
+	background: url('../img/logo-bradescoseguros_102w_x_110h.png');
+}
+
+.logo-solucaoaqui--login {
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+	background: url('../img/logo-bradesco-solucaoaqui_550w_x_98h .png') no-repeat;
+	-o-background-size: contain;
+	   background-size: contain;
+}
+
+@media (min-width: 768px) {
+	.logo-solucaoaqui--login { height: 65px; }
+}
+
+@media (min-width: 992px) {
+	.logo-solucaoaqui--login { height: 82px; }
+}
+
+@media (min-width: 1200px) {
+	.logo-solucaoaqui--login {
+		margin-bottom: 30px;
+		height: 100px;
+	}
+}
+
+.texto-login {
+	text-align: center;
+}
+
+.texto-login h2 {
+	font-family: 'robotoregular';
+}
+
+.form-login { padding-top: 10px; }
+
+.esq-senha-login {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: right;
+	color: #fff;
+}
+.esq-senha-login a { color: #fff; }
+
+.titl-login-adm {
+  font: 32px 'robotolight';
+	margin-bottom: 20px;
+}
+
+.titl-login-adm .iconsa {
+  position: relative;
+  top: -2px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.titl-login-adm .fa {
+	margin-right: 18px;
+	font-size: 33px;
+}
