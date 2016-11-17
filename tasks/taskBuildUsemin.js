@@ -4,7 +4,7 @@ module.exports = function (gulp, plugins, config) {
       return gulp.src(config.htmlSrcPath)
                  .pipe(plugins.usemin({
                       js: [plugins.uglify],
-                      css: [plugins.autoprefixer,
+                      css: [plugins.autoprefixer(config.autoprefix),
                             plugins.cssmin
                            ]
                  }))
