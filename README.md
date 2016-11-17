@@ -1,4 +1,4 @@
-# Projeto Bradesco Solução Aqui #
+# Boilerplate pessoal para desenvolvimento web #
 
 ### Observações ###
 
