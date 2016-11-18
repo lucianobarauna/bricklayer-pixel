@@ -1,4 +1,4 @@
-// Start server
+// Inicia server
 module.exports = function (gulp, plugins, config) {
   gulp.task('server', function(){
       plugins.browserSync.init({

@@ -1,4 +1,4 @@
-// Otimiza imagens
+// Copia e otimiza imagens
 module.exports = function (gulp, plugins, config) {
   gulp.task("buildImg", function(){
       return gulp.src(config.imgSrcPath)

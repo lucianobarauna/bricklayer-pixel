@@ -6,14 +6,14 @@ var gulp = require("gulp"),
 // Limpa o diretorio
 require(config.tasksPath + '/taskClean')(gulp, plugins, config);
 
-// Inicia diretorio raiz com favicon
+// Cria diretorio raiz e copia favicon
 require(config.tasksPath + '/taskFavico')(gulp, plugins, config);
 
-// Otimiza imagens
+// Copia e otimiza imagens
 require(config.tasksPath + '/taskBuildImg')(gulp, plugins, config);
 
-// Copia bibliotecas
-require(config.tasksPath + '/taskCopyLibs')(gulp, plugins, config);
+// Copia fontes
+require(config.tasksPath + '/taskCopyFont')(gulp, plugins, config);
 
 // Minifica e concatena
 require(config.tasksPath + '/taskBuildUsemin')(gulp, plugins, config);
