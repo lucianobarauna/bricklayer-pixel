@@ -15,7 +15,7 @@ require(config.tasksPath + '/taskBuildImg')(gulp, plugins, config);
 // Copia fontes
 require(config.tasksPath + '/taskBuildFont')(gulp, plugins, config);
 
-// Minifica e concatena
+// Minifica e concatena js/css
 require(config.tasksPath + '/taskBuildCode')(gulp, plugins, config);
 
 // Start server
