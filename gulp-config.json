@@ -8,7 +8,6 @@
     "imgSrcDist":"dist/img",
     "fontSrcPath":"src/fonts/**/*",
     "fontSrcDist":"dist/fonts",
-    "htmlSrcPath":"src/**/*.html",
-    "tasksPath":"./tasks",
-    "autoprefix":"Last 4 versions"
+    "htmlSrcPath":"src/*.html",
+    "tasksPath":"./tasks"
 }
