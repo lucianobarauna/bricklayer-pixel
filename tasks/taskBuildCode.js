@@ -1,4 +1,4 @@
-// Minifica, concatena codigos e move para build
+// Minifica, concatena codigos js/css e move para build
 module.exports = function (gulp, plugins, config) {
     gulp.task("buildCode", function(){
         return gulp.src(config.htmlSrcPath)
