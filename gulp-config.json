@@ -4,7 +4,7 @@
     "srcWatch":"src/**/*",
     "favIcoSrcPath":"src/favicon/*",
     "favIcoSrcDist":"dist/favicon",
-    "imgSrcPath":"src/img/**/*",
+    "imgSrcPath":"src/img/*",
     "imgSrcDist":"dist/img",
     "fontSrcPath":"src/fonts/**/*",
     "fontSrcDist":"dist/fonts",
