@@ -6,7 +6,7 @@
     "favIcoSrcDist":"dist/favicon",
     "imgSrcPath":"src/img/*",
     "imgSrcDist":"dist/img",
-    "fontSrcPath":"src/fonts/**/*",
+    "fontSrcPath":"src/fonts/*",
     "fontSrcDist":"dist/fonts",
     "htmlSrcPath":"src/*.html",
     "htmlSrcDist":"dist/*.html",
