@@ -1,6 +1,6 @@
 /*!
- * Estilo Solucao Aqui
- * Desenvolvido por fattoriaweb em: 21/10/2016
+ * @Nome do projeto
+ * Desenvolvido por @nome em: 21/10/2016
  */
 
 
@@ -13,18 +13,6 @@
    ========================================================================== */
 
 @font-face {
-    font-family: 'robotobold';
-    src: url('../fonts/roboto-bold-webfont.eot');
-    src: url('../fonts/roboto-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/roboto-bold-webfont.woff2') format('woff2'),
-         url('../fonts/roboto-bold-webfont.woff') format('woff'),
-         url('../fonts/roboto-bold-webfont.ttf') format('truetype'),
-         url('../fonts/roboto-bold-webfont.svg#robotobold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
     font-family: 'robotoregular';
     src: url('../fonts/roboto-regular-webfont.eot');
     src: url('../fonts/roboto-regular-webfont.eot?#iefix') format('embedded-opentype'),
@@ -35,62 +23,3 @@
     font-weight: normal;
     font-style: normal;
 }
-
-@font-face {
-    font-family: 'robotolight';
-    src: url('../fonts/roboto-light-webfont.eot');
-    src: url('../fonts/roboto-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/roboto-light-webfont.woff2') format('woff2'),
-         url('../fonts/roboto-light-webfont.woff') format('woff'),
-         url('../fonts/roboto-light-webfont.ttf') format('truetype'),
-         url('../fonts/roboto-light-webfont.svg#robotoregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/*
-   Icones Solucão Aqui
-   ========================================================================== */
-
-@font-face {
-    font-family: 'iconsSolucaoAqui';
-    src:  url('../fonts/iconsSolucaoAqui.eot?d6f0mv');
-    src:  url('../fonts/iconsSolucaoAqui.eot?d6f0mv#iefix') format('embedded-opentype'),
-           url('../fonts/iconsSolucaoAqui.ttf?d6f0mv') format('truetype'),
-           url('../fonts/iconsSolucaoAqui.woff?d6f0mv') format('woff'),
-           url('../fonts/iconsSolucaoAqui.svg?d6f0mv#iconsSolucaoAqui') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-i.iconsa {
-    font-family: 'iconsSolucaoAqui' !important;
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.iconsa-add-user:before { content: "\e900"; }
-.iconsa-anexo:before { content: "\e901"; }
-.iconsa-book:before { content: "\e902"; }
-.iconsa-catraca-o:before { content: "\e903"; }
-.iconsa-check-linha:before { content: "\e904"; }
-.iconsa-check:before { content: "\e905"; }
-.iconsa-email-linhas:before { content: "\e906"; }
-.iconsa-email-preenchido:before { content: "\e907"; }
-.iconsa-excel:before { content: "\e908"; }
-.iconsa-inbox:before { content: "\e909"; }
-.iconsa-lamp:before { content: "\e90a"; }
-.iconsa-perigo:before { content: "\e90b"; }
-.iconsa-predios:before { content: "\e90c"; }
-.iconsa-remove-user:before { content: "\e90d"; }
-.iconsa-search:before { content: "\e90e"; }
-.iconsa-star:before { content: "\e90f"; }
-.iconsa-transferencia:before { content: "\e910"; }
-.iconsa-user:before { content: "\e911"; }

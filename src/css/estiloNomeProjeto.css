@@ -1,0 +1,54 @@
+/*!
+ * Estilo @Nome Projeto
+ * Desenvolvido por @Nome Autor em: 21/10/2016
+ */
+
+ /* ==========================================================================
+       Reset
+    ========================================================================== */
+
+html,
+body,
+main { height:100%; }
+
+body {
+  font-family: 'robotoregular', sans-serif;
+  color: #666666;
+  background-color: #F3F3F3;
+}
+
+a {
+  color: inherit;
+  transition-duration: .2s;
+}
+
+a:hover {
+  color: #D9152B;
+  text-decoration: inherit;
+}
+
+a:hover, a:active, a:focus {
+  transition-duration: 0.1s;
+}
+
+img, iframe, object, video {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+form:before, form:after {
+  display: table;
+  content: " ";
+}
+form:after { clear: both; }
+b { font-family: 'robotobold'; }
+
+textarea {
+  max-width: 100%;
+  width: 100%;
+}
+
+/* ==========================================================================
+    Elementos gerais
+   ========================================================================== */
