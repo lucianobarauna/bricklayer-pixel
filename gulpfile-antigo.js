@@ -45,25 +45,21 @@ const browserSync = require('browser-sync').create()
 
 // gulp.task('default', ['taskServer'])
 
-gulp.task('html', function taskHtml(){
+gulp.task('taskHtml', function taskHtml(){
     return gulp.src('./src/pug/*.pug')
                .pipe(pug({
                 //    pretty: '\t'
                }))
                .pipe(gulp.dest('./public/'))
+               .pipe(browserSync.stream())
 })
 
-gulp.task('html-watch', ['html'], function(done){
-    browserSync.reload()
-    console.log(done)
-    done()
-})
-
-gulp.task('default', ['html'] ,function(){
-
+gulp.task('taskServer', function taskServer(){
     browserSync.init({
         server: './public'
     })
-
-    gulp.watch('./public/*.html', ['html-watch']);
+    gulp.watch('./src/pug/*.pug', ['taskHtml']);
+    gulp.watch('./public/').on('change', browserSync.reload)
 })
+
+gulp.task('default', ['taskServer', 'taskHtml'])
