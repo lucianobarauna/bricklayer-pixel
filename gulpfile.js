@@ -1,25 +1,48 @@
-// Modulos gulp
-var gulp = require("gulp"),
-    plugins = require('gulp-load-plugins')({pattern: '*'}),
-    config = require('./gulp-config.json');
+const gulp = require('gulp')
+const pug = require('gulp-pug')
+const browserSync = require('browser-sync').create()
 
-// Limpa o diretorio
-require(config.tasksPath + '/taskClean')(gulp, plugins, config);
 
-// Cria diretorio raiz e copia favicon
-require(config.tasksPath + '/taskBuildFavico')(gulp, plugins, config);
+const pathSrc = {
+    htmlTemplate: 'src/pug/*.pug'
+}
 
-// Copia e otimiza imagens
-require(config.tasksPath + '/taskBuildImg')(gulp, plugins, config);
+const pathPublic = {
+    baseDir: 'public/',
+    html: 'public/*.html'
 
-// Copia fontes
-require(config.tasksPath + '/taskBuildFont')(gulp, plugins, config);
+}
 
-// Minifica e concatena js/css
-require(config.tasksPath + '/taskBuildCode')(gulp, plugins, config);
 
-// Start server
-require(config.tasksPath + '/taskServer')(gulp, plugins, config);
+gulp.task('taskHtml', () => {
+    return gulp.src(pathSrc.htmlTemplate)
+               .pipe(pug(
+            //        {
+            //        pretty: '\t',
+            //        compileDebug: false
+            //    }
+            ))
+               .pipe(gulp.dest(pathPublic.baseDir))
+})
 
-// Build projeto
-require(config.tasksPath + '/taskBuild')(gulp, plugins, config);
+gulp.task('taskWatch', () => {
+    gulp.watch(pathSrc.htmlTemplate, ['taskHtml', browserSync.reload])
+    // gulp.watch('src/*').on('change', browserSync.reload);
+})
+
+// Server
+gulp.task('taskServer', () => {
+    browserSync.init({
+        server: {
+            baseDir: './public'
+        }
+    });
+    // gulp.watch(pathSrc.htmlTemplate, ['taskHtml']);
+    // gulp.watch('src/**/*')
+    //     .on('change', browserSync.reload);
+});
+
+gulp.task('default', [
+    'taskWatch',
+    'taskServer'
+])
