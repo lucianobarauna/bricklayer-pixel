@@ -1,31 +1,27 @@
 {
-  "name": "html",
-  "version": "1.0.0",
-  "description": "",
+  "name": "pedreiroPixel-boilerplate",
+  "version": "0.0.1",
+  "description": "A simple and fast boilerplate for static projects using Gulp, Pug, Sass",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucianobarauna/pedreiroPixel-boilerplate"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "gulp": "gulp",
     "checkupdates": "npm-check-updates"
   },
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "boilerplate"
+  ],
+  "author": "Luciano Baraúna <lucianobaraunadev@gmail.com> (http://www.lucianobarauna.com.br/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lucianobarauna/pedreiroPixel-boilerplate/issues"
+  },
+  "homepage": "https://github.com/lucianobarauna/pedreiroPixel-boilerplate#readme",
   "devDependencies": {
-    "bootstrap": "^3.3.7",
-    "browser-sync": "^2.17.6",
-    "font-awesome": "^4.7.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-clean": "^0.3.2",
-    "gulp-cssmin": "^0.1.7",
-    "gulp-htmlmin": "^3.0.0",
-    "gulp-imagemin": "^3.1.1",
-    "gulp-load-plugins": "^1.4.0",
-    "gulp-uglify": "^2.0.0",
-    "gulp-usemin": "^0.3.25",
-    "html5shiv": "^3.7.3",
-    "jquery": "^3.1.1",
-    "npm-check-updates": "^2.8.6",
-    "respond.js": "^1.4.2"
+    "gulp": "^3.9.1"
   }
 }
