@@ -1,1 +1,1 @@
-{"version":3,"file":"app.css","sources":["app.scss"],"sourcesContent":["\nh1 {\n  color: yellow;\n}\n"],"names":[],"mappings":"+BACA,AAAA,EAAE,AAAC,CACD,KAAK,CAAE,MAAM,CACd"}
+{"version":3,"file":"app.css","sources":["app.scss"],"sourcesContent":["\nh1 {\n  color: gray;\n  font-size: 40px\n}\n"],"names":[],"mappings":"+BACA,AAAA,EAAE,AAAC,CACD,KAAK,CAAE,IAAI,CACX,SAAS,CAAE,IACb,CAAE"}

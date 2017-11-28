@@ -1,65 +1,58 @@
+const browserSync = require('browser-sync')
+const del = require('del')
 const gulp = require('gulp')
+const plumber = require('gulp-plumber')
 const pug = require('gulp-pug')
 const sass = require('gulp-sass')
 const sourcemaps = require('gulp-sourcemaps')
-const browserSync = require('browser-sync').create()
 
-// gulp.task( 'taskPug', function taskPug(){
-//     return gulp.src('src/pug/*.pug')
-//                .pipe(pug({
-//                             pretty: '\t',
-//                             compileDebug: false
-//                     }))
-//                .pipe( gulp.dest('public/') )
-//                .pipe(browserSync.stream({stream:true}) )
-// });
+const reload = browserSync.reload
 
-// gulp.task( 'default', ['taskPug', 'taskSass'], function startServe(){
-//     browserSync.init({
-//         server: './public'
-//     });
-//     gulp.watch('src/sass/*.scss', ['taskPug']);
-//     gulp.watch('src/sass/*.scss', ['taskSass']);
-//     gulp.watch('public/**/*').on( 'change', browserSync.reload )
 
-// });
-
+gulp.task('taskSass', () => {
+  gulp
+    .src('src/sass/**/*.scss')
+    .pipe(sourcemaps.init())
+    .pipe(
+        sass({
+              outputStyle: 'compressed',
+              sourceComments: 'map'
+            }).on('error', sass.logError)
+    )
+    .pipe(sourcemaps.write('./'))
+    .pipe(browserSync.stream({stream:true}))
+    .pipe(gulp.dest('./public/css/'))
+})
 
 gulp.task('taskPug', () => {
-  return gulp.src('src/pug/*.pug')
-  .pipe(pug({
-      pretty: '\t',
-      compileDebug: false
-  }))
-  .pipe(gulp.dest('public/'))
-  .pipe(browserSync.reload())
+  gulp
+    .src('./src/pug/*.pug')
+    .pipe(plumber())
+    .pipe(pug())
+    .pipe(gulp.dest('./public'))
+    .pipe(reload({stream: true}))
 })
 
-gulp.task('taskSass', function taskSass(){
-    return gulp.src('src/sass/*.scss')
-               .pipe(sourcemaps.init())
-               .pipe(
-                    sass({
-                          outputStyle: 'compressed',
-                          sourceComments: 'map'
-                        }).on('error', sass.logError)
-                )
-                .pipe(sourcemaps.write('./'))
-                .pipe(gulp.dest('public/css/'))
-                .pipe(browserSync.stream({stream:true}))
+gulp.task('taskClearPublic', () => {
+    del('./public/**/*')
 })
 
-gulp.task('create-server', () => browserSync.init({
-  server: {
-      baseDir: './public/'
-  }
-}))
+// gulp.task('taskWatch', () => {
+//   gulp.watch(['./src/sass/**/*'], ['taskSass'])
+//   gulp.watch(['./src/*.pug'], ['taskPug'])
+// })
 
-gulp.task('default', [
-  'create-server',
-  'taskPug',
-  'taskSass'
-], () => {
-  return gulp.watch('src/pug/*.pug', ['taskPug'])
-             .watch('src/sass/*.scss', ['taskSass'])
+// gulp.task('taskBrowserSync', () => {
+//   browserSync.init({
+//     server: {
+//       baseDir: './public/'
+//     }
+//   })
+// })
+
+gulp.task('taskPublic', ['taskClearPublic'], () => {
+  gulp.start('taskPug', 'taskSass')
 })
+
+gulp.task('default', ['taskPublic'])
+// gulp.task('default', ['taskBuild', 'taskWatch', 'taskBrowserSync'])
