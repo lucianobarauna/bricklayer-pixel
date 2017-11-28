@@ -11,7 +11,7 @@ const reload = browserSync.reload
 
 gulp.task('taskSass', () => {
   gulp
-    .src('src/sass/**/*.scss')
+    .src('src/sass/*.scss')
     .pipe(sourcemaps.init())
     .pipe(
         sass({
@@ -34,25 +34,25 @@ gulp.task('taskPug', () => {
 })
 
 gulp.task('taskClearPublic', () => {
-    del('./public/**/*')
+  del('./public/**/*')
 })
 
-// gulp.task('taskWatch', () => {
-//   gulp.watch(['./src/sass/**/*'], ['taskSass'])
-//   gulp.watch(['./src/*.pug'], ['taskPug'])
-// })
+gulp.task('taskWatch', () => {
+  gulp.watch(['./src/sass/*.scss'], ['taskSass'])
+  gulp.watch(['./src/pug/*.pug'], ['taskPug'])
+})
 
-// gulp.task('taskBrowserSync', () => {
-//   browserSync.init({
-//     server: {
-//       baseDir: './public/'
-//     }
-//   })
-// })
+gulp.task('taskBrowserSync', () => {
+  browserSync.init({
+    server: {
+      baseDir: './public/'
+    }
+  })
+})
 
 gulp.task('taskPublic', ['taskClearPublic'], () => {
-  gulp.start('taskPug', 'taskSass')
+  gulp.start('taskSass', 'taskPug')
 })
 
-gulp.task('default', ['taskPublic'])
+gulp.task('default', ['taskPublic', 'taskWatch', 'taskBrowserSync'])
 // gulp.task('default', ['taskBuild', 'taskWatch', 'taskBrowserSync'])
