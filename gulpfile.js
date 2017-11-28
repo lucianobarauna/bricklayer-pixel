@@ -33,8 +33,8 @@ gulp.task( 'default', ['taskPug', 'taskSass'], function startServe(){
         server: 'public'
     });
 
-    gulp.watch('src/pug/*.pug', ['taskPug', browserSync.reload]);
-    gulp.watch('src/sass/*.scss', ['taskSass', browserSync.reload]);
+    gulp.watch('src/pug/*.pug', ['taskPug']);
+    gulp.watch('src/sass/*.scss', ['taskSass']);
     gulp.watch('public/**/*').on( 'change', browserSync.reload )
 
 });
