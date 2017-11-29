@@ -1,4 +1,4 @@
-const browserSync = require('browser-sync')
+const browserSync = require('browser-sync').create()
 const del = require('del')
 const gulp = require('gulp')
 const plumber = require('gulp-plumber')
@@ -8,51 +8,40 @@ const sourcemaps = require('gulp-sourcemaps')
 
 const reload = browserSync.reload
 
+gulp.task('taskClearDist', () => {
+  del('./dist/**/*')
+})
+
+gulp.task('taskHtml', () => {
+  gulp.src('./src/*.html')
+      .pipe(gulp.dest('./dist/'))
+});
 
 gulp.task('taskSass', () => {
-  gulp
-    .src('src/sass/*.scss')
-    .pipe(sourcemaps.init())
-    .pipe(
-        sass({
-              outputStyle: 'compressed',
-              sourceComments: 'map'
-            }).on('error', sass.logError)
-    )
-    .pipe(sourcemaps.write('./'))
-    .pipe(browserSync.stream({stream:true}))
-    .pipe(gulp.dest('./public/css/'))
+  gulp.src('./src/sass/*.scss')
+      .pipe(sourcemaps.init())
+      .pipe(
+        sass().on('error', sass.logError)
+      )
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest('./dist/css'))
+      .pipe(browserSync.stream());
+
 })
 
-gulp.task('taskPug', () => {
-  gulp
-    .src('./src/pug/*.pug')
-    .pipe(plumber())
-    .pipe(pug())
-    .pipe(gulp.dest('./public'))
-    .pipe(reload({stream: true}))
-})
-
-gulp.task('taskClearPublic', () => {
-  del('./public/**/*')
-})
-
-gulp.task('taskWatch', () => {
-  gulp.watch(['./src/sass/*.scss'], ['taskSass'])
-  gulp.watch(['./src/pug/*.pug'], ['taskPug'])
-})
-
-gulp.task('taskBrowserSync', () => {
+gulp.task('taskServer', ['taskSass'], () => {
   browserSync.init({
     server: {
-      baseDir: './public/'
+      baseDir: "./dist"
     }
   })
+  gulp.watch("src/sass/**/*.scss", ['taskSass'])
+  gulp.watch("./dist/**/*").on('change', reload);
 })
 
-gulp.task('taskPublic', ['taskClearPublic'], () => {
-  gulp.start('taskSass', 'taskPug')
+gulp.task('taskDist', ['taskClearDist'], () => {
+  gulp.start('taskHtml', 'taskSass', 'taskServer')
 })
 
-gulp.task('default', ['taskPublic', 'taskWatch', 'taskBrowserSync'])
+gulp.task('default', ['taskDist'])
 // gulp.task('default', ['taskBuild', 'taskWatch', 'taskBrowserSync'])
