@@ -12,9 +12,18 @@ gulp.task('taskClearDist', () => {
   del('./dist/**/*')
 })
 
+// Funcionando
+// gulp.task('taskHtml', () => {
+//   gulp.src('./src/*.html')
+//       .pipe(gulp.dest('./dist/'))
+// });
+
 gulp.task('taskHtml', () => {
-  gulp.src('./src/*.html')
+  gulp.src('./src/pug/*.pug')
+      .pipe(plumber())
+      .pipe(pug())
       .pipe(gulp.dest('./dist/'))
+      .pipe(browserSync.stream())
 });
 
 gulp.task('taskSass', () => {
@@ -25,18 +34,19 @@ gulp.task('taskSass', () => {
       )
       .pipe(sourcemaps.write())
       .pipe(gulp.dest('./dist/css'))
-      .pipe(browserSync.stream());
+      .pipe(browserSync.stream())
 
 })
 
-gulp.task('taskServer', ['taskSass'], () => {
+gulp.task('taskServer', ['taskHtml', 'taskSass'], () => {
   browserSync.init({
     server: {
       baseDir: "./dist"
     }
   })
+  gulp.watch("src/pug/**/*.pug", ['taskHtml'])
   gulp.watch("src/sass/**/*.scss", ['taskSass'])
-  gulp.watch("./dist/**/*").on('change', reload);
+  gulp.watch("./src/**/*").on('change', reload);
 })
 
 gulp.task('taskDist', ['taskClearDist'], () => {
