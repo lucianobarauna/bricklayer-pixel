@@ -1,1 +1,8 @@
-@import 'layout/teste.scss'
+@import 'layout/teste.scss';
+@import 'layout/casa.scss';
+
+#folha-app {
+  color: black;
+  background: white;
+  font-size: 180px;
+}

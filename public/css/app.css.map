@@ -1,1 +1,0 @@
-{"version":3,"file":"app.css","sources":["app.scss","layout/teste.scss"],"sourcesContent":["@import 'layout/teste.scss'\n","h1 {\n  color: red;\n  font-size: 40px\n}\n"],"names":[],"mappings":"wCCAA,AAAA,EAAE,AAAC,CACD,KAAK,CAAE,GAAG,CACV,SAAS,CAAE,IACb,CAAE"}
