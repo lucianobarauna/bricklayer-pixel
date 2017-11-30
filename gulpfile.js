@@ -1,4 +1,4 @@
-const browserSync = require('browser-sync').create()
+const browserSync = require('browser-sync')
 const del = require('del')
 const gulp = require('gulp')
 const plumber = require('gulp-plumber')
@@ -8,50 +8,73 @@ const sourcemaps = require('gulp-sourcemaps')
 
 const reload = browserSync.reload
 
+
+// Funcionando
+// gulp.task('taskHtml', () => {
+    //   gulp.src('./src/*.html')
+    //       .pipe(gulp.dest('./dist/'))
+    // });
+
+gulp.task('taskSass', () => {
+    gulp.src('./src/assets/sass/*.scss')
+    .pipe(sourcemaps.init())
+    .pipe(
+        sass().on('error', sass.logError)
+    )
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('./dist/css'))
+    //   .pipe(browserSync.stream())
+    .pipe(reload({stream: true}))
+
+})
+
+gulp.task('taskHtml', () => {
+    gulp.src('./src/*.pug')
+    .pipe(plumber())
+    .pipe(pug({
+      pretty: '\t',
+      compileDebug: true
+    }))
+    .pipe(gulp.dest('./dist/'))
+    .pipe(reload({stream: true}))
+});
+
+gulp.task('rebuild', ['taskHtml'], function () {
+  reload();
+});
+
 gulp.task('taskClearDist', () => {
   del('./dist/**/*')
 })
 
-// Funcionando
-// gulp.task('taskHtml', () => {
-//   gulp.src('./src/*.html')
-//       .pipe(gulp.dest('./dist/'))
-// });
-
-gulp.task('taskHtml', () => {
-  gulp.src('./src/pug/*.pug')
-      .pipe(plumber())
-      .pipe(pug())
-      .pipe(gulp.dest('./dist/'))
-      .pipe(browserSync.stream())
-});
-
-gulp.task('taskSass', () => {
-  gulp.src('./src/sass/*.scss')
-      .pipe(sourcemaps.init())
-      .pipe(
-        sass().on('error', sass.logError)
-      )
-      .pipe(sourcemaps.write())
-      .pipe(gulp.dest('./dist/css'))
-      .pipe(browserSync.stream())
-
+gulp.task('watch', () => {
+  gulp.watch('src/assets/sass/**/*', ['taskSass'])
+  gulp.watch('src/**/*.pug', ['rebuild'])
 })
 
-gulp.task('taskServer', ['taskHtml', 'taskSass'], () => {
+
+// gulp.task('taskServer', ['taskSass', 'taskHtml'], () => {
+//   browserSync.init({
+//     server: {
+//       baseDir: "./dist"
+//     }
+//   })
+//   gulp.watch("src/assets/sass/**/*.scss", ['taskSass'])
+//   gulp.watch("src/**/*.pug", ['taskHtml'])
+//   gulp.watch("./src/**/*").on('change', reload);
+// })
+
+gulp.task('taskServer', () => {
   browserSync.init({
     server: {
       baseDir: "./dist"
     }
   })
-  gulp.watch("src/pug/**/*.pug", ['taskHtml'])
-  gulp.watch("src/sass/**/*.scss", ['taskSass'])
-  gulp.watch("./src/**/*").on('change', reload);
 })
 
 gulp.task('taskDist', ['taskClearDist'], () => {
-  gulp.start('taskHtml', 'taskSass', 'taskServer')
+  gulp.start('taskSass', 'taskHtml')
 })
 
-gulp.task('default', ['taskDist'])
+gulp.task('default', ['taskDist', 'taskServer', 'watch'])
 // gulp.task('default', ['taskBuild', 'taskWatch', 'taskBrowserSync'])
