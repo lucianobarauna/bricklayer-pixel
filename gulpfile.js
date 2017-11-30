@@ -18,8 +18,6 @@ gulp.task('taskPug', () => {
       .pipe(reload({stream: true}))
 })
 
-gulp.task('taskPug:watch', ['taskPug'], reload);
-
 gulp.task('taskSass', () => {
     gulp.src('./src/assets/sass/*.scss')
     .pipe(sourcemaps.init())
@@ -37,7 +35,7 @@ gulp.task('taskClearDist', () => {
 gulp.task('taskServer', () => {
   browserSync.init({ server: './dist' });
   gulp.watch('./src/assets/sass/**/*.scss', ['taskSass']);
-  gulp.watch('./src/pug/**/*.pug', ['taskPug:watch']);
+  gulp.watch('./src/pug/**/*.pug', ['taskPug']);
 })
 
 gulp.task('default', ['taskServer', 'taskSass', 'taskPug', 'taskClearDist']);
