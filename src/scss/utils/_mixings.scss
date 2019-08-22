@@ -1,0 +1,101 @@
+// Mixing fonts
+@mixin fontFamily($font, $type) {
+ @if($font == 'novecento') {
+  font-family: '#{$font}_#{$type}', Helvetica, sans-serif;
+ }@else if($font == 'roboto') {
+   font-family: '#{$font}_#{$type}', Helvetica, sans-serif;
+ }@else if($font == 'circular') {
+  font-family: '#{$font}_#{$type}', Helvetica, sans-serif;
+ }@else {
+  font-family: Helvetica, sans-serif;
+ }
+}
+
+// Media querys
+@mixin media-max($size){
+  @media (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin media-min($size){
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+// Style buttons colors
+@mixin style-button($colorText, $colorBackgroundBorder) {
+  color: $colorText;
+  background-color: $colorBackgroundBorder;
+  border-color: $colorBackgroundBorder;
+  box-shadow: inset 0 0 0 1px $colorBackgroundBorder;
+
+  &:focus {
+    color: $colorText;
+  }
+
+  &:hover,
+  &:active {
+      color: $colorBackgroundBorder;
+      background-color: transparent;
+      border-color: $colorBackgroundBorder;
+  }
+  // Disable state
+  &.btn-boobam[disabled] {
+      &:hover,
+      &:active {
+          color: $colorText;
+          background-color: $colorBackgroundBorder;
+      }
+  }
+}
+
+// Modal opener for mobile actions
+@mixin modalMobileOpen($valueZindex, $valueBgcolor: null) {
+    overflow: hidden;
+    height: 100%;
+    // Remove scroll ios safari
+    body,
+    main {
+      overflow: hidden;
+      height: 100%;
+    }
+    main {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $valueBgcolor;
+        z-index: $valueZindex;
+      }
+    }
+}
+
+// Style dropdown
+@mixin styleDropDown(){
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #59595C;
+  border: solid 1px #999999;
+  border-radius: 0;
+  background-color: #ffffff;
+  .icon-boobam {
+    font-size: 35px;
+    line-height: .75;
+  }
+}
+
+// Remove active and focus state shadow
+@mixin removeShadowStateBtn(){
+  &:active {
+    box-shadow: none;
+  }
+  &:focus {
+    outline: none;
+  }
+}
