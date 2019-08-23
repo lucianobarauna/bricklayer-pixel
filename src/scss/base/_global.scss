@@ -1,224 +1,31 @@
 
- html,
- body {
-   height: 100%;
- }
+// * {
+//   margin: 0;
+//   padding: 0;
+// }
 
- body {
-   color: $default-text-color;
-	 @include fontFamily('circular', 'book');
-	 font-weight: normal;
-   background-color: $white;
-   font-size:14px;
- }
+// *,
+// *:before,
+// *:after {
+//    box-sizing: inherit;
+// }
 
-.body-flex {
-  // Helps keep the baseboard fastened to the bottom
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column
-}
-
- iframe {
-  max-width: 100%;
-  width: auto;
-  height: auto;
- }
-
- a,
- button,
- input[type="button"] {
-   color: #333;
-   transition-duration: .3s;
-   &:hover,
-   &:active {
-     transition-duration: .15s;
-    }
-  }
-
-  input {
-    transition-duration: .3s;
-    &:focus {
-      transition-duration: .15s;
-    }
-}
-
-// Container align boobam
-.container-boobam {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  @include media-min(992px){
-    padding-right: 30px;
-    padding-left: 30px;
-  }
-
+html {
+  // box-sizing: border-box;
 }
 
 
-/* Google AdWords Conversion bug fix */
-iframe[name='google_conversion_frame'] {
-    height: 0 !important;
-    width: 0 !important;
-    line-height: 0 !important;
-    font-size: 0 !important;
-    margin-top: -13px;
-    float: left;
-}
-
-.icheck > label {
-  padding-left: 0;
-}
-
-.loading-overlay {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+html,
+body {
   height: 100%;
-  z-index: 1100;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 3px;
-
-  &.active {
-    display: block;
-  }
-
-  .spinner {
-    width: 30px;
-    height: 30px;
-
-    border: 3px solid #dedede;
-    border-top: 3px solid #333;
-    border-radius: 100%;
-
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 48vh auto;
-
-    animation: spin 1s infinite linear;
-  }
 }
 
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  } to {
-    transform: rotate(360deg);
-  }
-}
-/* bootstrap-select overhide */
-.bootstrap-select .btn {
-  border-radius: 0;
-  border-color: #e7e7e7;
-  background-color: #fff;
-  color: #999;
-  font-size: 13px !important;
-  font-weight: 300;
-  padding: 10px 12px;
-}
-.bootstrap-select.open > .dropdown-toggle.btn-default {
-  border-color: #000;
-  background-color: #fff;
-  color: #040404;
-}
-.bootstrap-select.btn-group.open .dropdown-toggle {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-.bootstrap-select .dropdown-menu {
-  border-radius: 0;
+div {
+  padding: 1em;
+  border: 1px solid;
+  // box-sizing: border-box;
 }
 
-.bootstrap-select a {
-  height: inherit;
-  padding: 7px 20px !important;
-  @include fontFamily('circular', 'medium');
-  font-size: 14px;
-  white-space: normal;
-  color: #777;
-}
-
-/* Text colors */
-.text-danger {
-  color: getprops-map($boo-msg, danger) !important;
-}
-.text-success {
-  color: getprops-map($boo-msg, success) !important;
-}
-.text-light-blue {
-  color: $light-blue !important;
-}
-
-/* Message boobam */
-.msg-boobam-alert {
-  position: fixed;
-  display: inline-block;
-  bottom: -50px;
-  right: 0px;
-  left: 0px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-  border: 1px solid getprops-map($boo-msg, bdcolor);
-  padding: 15px;
-  background-color: getprops-map($boo-msg, bgcolor);
-  color: getprops-map($boo-msg, txcolor);
-  z-index: 1051;
-  opacity: 0;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  @include media-min(768px){
-    width: 600px;
-    margin: 0px auto;
-  }
-
-  &.visible {
-    opacity: 1;
-    bottom: 20px;
-  }
-
-  i {
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 36px;
-    margin-right: 8px;
-  }
-  &-success {
-    i {
-      color: getprops-map($boo-msg, success);
-    }
-  }
-  &-danger {
-    i {
-      color: getprops-map($boo-msg, danger);
-    }
-  }
-}
-
-/* Alert */
-.alert-boobam {
-  @include fontFamily('circular', 'light');
-  &-info{
-    background-color: #F5F3F3;
-  }
-}
-
-// Wrap do conteúdo das páginas para
-// colocar espaço entre a barra fixa do topo e conteúdo
-.wrapboobam {
-  padding-top: 130px;
-  padding-bottom: 105px;
-  @include media-min(getprops-map($boo-media, mediamin, sm)) {
-    padding-top: 110px;
-    padding-bottom: 132px;
-  }
-  transition-duration: 0.3s;
+body {
+  @include fontFamily('roboto', 'light');
 }
