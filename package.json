@@ -14,7 +14,7 @@
     "author": "",
     "repository": {
         "type": "git",
-        "url": "git:/lucianobarauna/pedreiroPixel-boilerplate.git"
+        "url": "git:/lucianobarauna/bricklayer-pixel.git"
     },
     "license": "ISC",
     "devDependencies": {
