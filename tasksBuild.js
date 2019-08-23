@@ -8,6 +8,7 @@ import autoprefixer from 'gulp-autoprefixer';
 import csso from 'gulp-csso';
 import del from 'del';
 import gulp from 'gulp';
+import gulpImgMin from 'gulp-imagemin';
 import gulpPug from 'gulp-pug';
 import gulpPugLinter from 'gulp-pug-linter';
 import pugLintStylish from 'puglint-stylish';
@@ -24,7 +25,7 @@ const buildClean = () => del([pathBuild.folderDist])
  */
 const buildFonts = () => {
     return gulp.src(pathBuild.fonts[0])
-        .pipe(gulp.dest(pathBuild.fonts[1]))
+      .pipe(gulp.dest(pathBuild.fonts[1]))
 }
 
 /**
@@ -32,7 +33,19 @@ const buildFonts = () => {
  */
 const buildImg = () => {
     return gulp.src(pathBuild.img[0])
-        .pipe(gulp.dest(pathBuild.img[1]))
+      .pipe(gulpImgMin(
+        [
+          gulpImgMin.optipng({ optimizationLevel: 5 }),
+          gulpImgMin.svgo({
+              plugins: [
+                  {removeViewBox: true},
+                  {cleanupIDs: false}
+              ]
+          })
+        ], {
+            verbose: true
+        }
+      )).pipe(gulp.dest(pathBuild.img[1]))
 }
 
 /**
@@ -40,7 +53,7 @@ const buildImg = () => {
  */
 const buildMocks = () => {
     return gulp.src(pathBuild.mocks[0])
-        .pipe(gulp.dest(pathBuild.mocks[1]))
+      .pipe(gulp.dest(pathBuild.mocks[1]))
 }
 
 /**
@@ -48,7 +61,7 @@ const buildMocks = () => {
  */
 const buildJs = () => {
     return gulp.src(pathBuild.js[0])
-        .pipe(gulp.dest(pathBuild.js[1]))
+      .pipe(gulp.dest(pathBuild.js[1]))
 }
 
 /**
@@ -56,16 +69,16 @@ const buildJs = () => {
  */
 const buildCss = () => {
     return gulp.src(pathBuild.srcSass)
-        .pipe(sass({ errLogToConsole: true }).on('error', sass.logError))
-        .pipe(autoprefixer({
-            cascade: false
-        }))
-        .pipe(csso({
-            restructure: true,
-            debug: true
-        }))
-        .pipe(gulpRename(pathBuild.cssMin))
-        .pipe(gulp.dest(pathBuild.distCss))
+      .pipe(sass({ errLogToConsole: true }).on('error', sass.logError))
+      .pipe(autoprefixer({
+          cascade: false
+      }))
+      .pipe(csso({
+          restructure: true,
+          debug: true
+      }))
+      .pipe(gulpRename(pathBuild.cssMin))
+      .pipe(gulp.dest(pathBuild.distCss))
 }
 
 /**
@@ -74,12 +87,12 @@ const buildCss = () => {
  */
 const buildHtml = () => {
     return gulp.src(pathBuild.srcPug)
-        .pipe(gulpPugLinter({
-            reporter: pugLintStylish,
-            failAfterError: true
-        })).pipe(gulpPug({
-            pretty: true
-        })).pipe(gulp.dest(pathBuild.distPug))
+      .pipe(gulpPugLinter({
+          reporter: pugLintStylish,
+          failAfterError: true
+      })).pipe(gulpPug({
+          pretty: true
+      })).pipe(gulp.dest(pathBuild.distPug))
 };
 
 
