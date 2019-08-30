@@ -1,0 +1,25 @@
+
+include ../atoms/button
+article.card
+  header.card_header
+    h1 Hello World Bricklayer
+  figure.imgbox
+    picture
+      source(media="(min-width: )", srcset="", sizes="")
+      img(src="./img/bricklayer.jpg", alt="Bricklayer")
+    figcaption.imgbox_caption
+      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, possimus! Accusantium veniam consequatur, vitae sed exercitationem officia sunt est, eveniet cupiditate, obcaecati nesciunt provident consequuntur eos nam aliquid labore! Non!
+  footer.card_footer
+    +mx-btn({
+      typeButton: 'danger',
+      title: 'NOT',
+      text: '☹️',
+      url: 'https://www.lipsum.com/feed/html'
+    })
+
+    +mx-btn({
+      typeButton: 'success',
+      title: 'OK',
+      text: '🙂',
+      url: 'https://www.lipsum.com/feed/html'
+    })
