@@ -10,4 +10,13 @@
 @import './base/reset';
 @import './base/fonts';
 @import './base/global';
+//--- Base of projetc
+
+// Organisms
+@import './organisms/card.scss';
+//--- Organisms
+
+// Pages
+@import './pages/index';
+//--- Pages
 
