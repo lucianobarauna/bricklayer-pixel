@@ -13,6 +13,7 @@ import gulpPug from 'gulp-pug';
 import gulpPugLinter from 'gulp-pug-linter';
 import pugLintStylish from 'puglint-stylish';
 import gulpRename from 'gulp-rename';
+import gulpUglify from 'gulp-uglify-es';
 import sass from 'gulp-sass';
 
 /**
@@ -61,7 +62,13 @@ const buildMocks = () => {
  */
 const buildJs = () => {
     return gulp.src(pathBuild.js[0])
-      .pipe(gulp.dest(pathBuild.js[1]))
+      .pipe(gulpUglify({
+        compress: {
+          drop_console: true
+        }
+      }))
+      .pipe(gulpRename(pathBuild.js[1]))
+      .pipe(gulp.dest(pathBuild.js[2]))
 }
 
 /**

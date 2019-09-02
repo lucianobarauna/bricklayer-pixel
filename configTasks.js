@@ -60,6 +60,7 @@ const pathBuild = {
     ],
     js: [
         './src/assets/js/*.js',
+        'main.min.js',
         './build/js'
     ],
     srcSass: './src/scss/bricklayer.scss',
