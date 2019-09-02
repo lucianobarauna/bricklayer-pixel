@@ -17,6 +17,7 @@ const pathDev = {
     ],
     js: [
         './src/assets/js/*.js',
+        'main.min.js',
         './dev/js'
     ],
     pug: [

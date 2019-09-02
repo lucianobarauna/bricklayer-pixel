@@ -50,7 +50,8 @@ const copyMocks = () => {
  */
 const copyJs = () => {
     return gulp.src(pathDev.js[0])
-        .pipe(gulp.dest(pathDev.js[1]))
+      .pipe(gulpRename(pathDev.js[1]))
+      .pipe(gulp.dest(pathDev.js[2]))
 }
 
 /**
