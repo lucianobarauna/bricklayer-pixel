@@ -35,7 +35,7 @@ const pathServer = {
     server: './dev',
     srcPug: './src/pug/**/*.pug',
     srcSass: './src/scss/**/*.scss',
-    srcJs: './src/js/*.js',
+    srcJs: './src/assets/js/*.js',
     srcImg: './src/img/**/*',
     watchs: [
         'dev/*.html',
