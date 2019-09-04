@@ -12,9 +12,17 @@
 @import './base/global';
 //--- Base of projetc
 
+// Atoms
+@import './atoms/buttons';
+//--- Atoms
+
 // Organisms
-@import './organisms/card.scss';
+@import './organisms/card';
 //--- Organisms
+
+// Template
+@import './templates/global';
+//--- Template
 
 // Pages
 @import './pages/index';

@@ -1,0 +1,33 @@
+@mixin buttonStyle($color) {
+  background-color: $color;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: transparent;
+      box-shadow: inset 0 0 0 4px $color;
+    }
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: #dcdcdc;
+  box-shadow: inset 0 0 0 4px transparent;
+  transition-duration: 300ms;
+  &:hover,
+  &:active,
+  &:focus {
+    transition-duration: 150ms;
+  }
+  &--danger {
+    @include buttonStyle(#C71F16);
+  }
+  &--success {
+    @include buttonStyle(#0A5C15);
+  }
+
+}
