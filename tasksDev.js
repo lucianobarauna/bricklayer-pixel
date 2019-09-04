@@ -10,6 +10,7 @@ import gulp from 'gulp';
 import gulpPug from 'gulp-pug';
 import gulpPugLinter from 'gulp-pug-linter';
 import gulpRename from 'gulp-rename';
+import gulpBabel from 'gulp-babel';
 import pugLintStylish from 'puglint-stylish';
 import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
@@ -50,6 +51,7 @@ const copyMocks = () => {
  */
 const copyJs = () => {
     return gulp.src(pathDev.js[0])
+      .pipe(gulpBabel())
       .pipe(gulpRename(pathDev.js[1]))
       .pipe(gulp.dest(pathDev.js[2]))
 }

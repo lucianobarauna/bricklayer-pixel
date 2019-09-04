@@ -7,6 +7,10 @@ function soma (param1, param2){
   return param1 + param2;
 };
 
+const hello = (nome) => {
+  return `hello $ {name}`;
+};
+
 soma(num1, num2);
 
 console.log(soma(num1, num2));
