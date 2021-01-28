@@ -1,27 +1,30 @@
 {
-    "env": {
-        "browser": true
-    },
-    "extends": "eslint:recommended",
-    "parserOptions": {
-        "ecmaVersion": 5
-    },
-    "rules": {
-        "indent": [
-            "error",
-            4
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "double"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ]
-    }
+  "env": {
+      "browser": true,
+      "commonjs": true,
+      "es6": true,
+      "jquery": true,
+      "node": true
+  },
+  "globals": {},
+  "parserOptions": {
+      "ecmaVersion": 8,
+      "sourceType": "module"
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "rules": {
+      "no-const-assign": "warn",
+      "no-this-before-super": "warn",
+      "no-undef": "warn",
+      "no-unreachable": "warn",
+      "no-unused-vars": "warn",
+      "constructor-super": "warn",
+      "valid-typeof": "warn",
+      "semi": "warn",
+      "quotes": [2, "single"],
+      "indent": [1, 4],
+      "no-else-return": 1
+  }
 }
