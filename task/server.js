@@ -3,7 +3,7 @@
  */
 
 import { watch, series } from 'gulp';
-import { pathServer } from './configTasks';
+import { pathServer } from './config';
 import browserSync from 'browser-sync';
 
 import {
@@ -12,7 +12,7 @@ import {
     compileSass,
     copyJs,
     copyImg
-} from './tasksDev';
+} from './dev';
 
 /*
 * Task to create a development server with Browser Sync
@@ -22,7 +22,7 @@ import {
 const upServer = () => {
     browserSync.init({
         server: pathServer.server
-    })
+    });
 
     watch(pathServer.srcSass, series(compileSass));
     watch(pathServer.srcPug, series(linterPug, compilePug));

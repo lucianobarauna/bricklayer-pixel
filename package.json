@@ -8,8 +8,8 @@
         "gulp": "gulp",
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "npm run gulp startDev",
-        "homolog": "npm run gulp startHomolog",
-        "build": "npm run gulp startBuild"
+        "build": "npm run gulp startBuild",
+        "postinstall": "node ./task/hello-world"
     },
     "author": "",
     "repository": {
@@ -40,6 +40,7 @@
         "gulp-sourcemaps": "^2.6.5",
         "gulp-uglify-es": "^1.0.4",
         "husky": "^3.0.5",
+        "node-emoji": "^1.10.0",
         "node-sass": "^4.14.1",
         "puglint-stylish": "^1.0.1",
         "sassdoc": "^2.7.0",

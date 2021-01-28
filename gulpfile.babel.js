@@ -10,7 +10,7 @@ import {
     linterPug,
     compilePug,
     compileSass
-} from './tasksDev';
+} from './task/dev';
 
 import {
     buildClean,
@@ -20,10 +20,10 @@ import {
     buildJs,
     buildCss,
     buildHtml
-} from './tasksBuild';
+} from './task/build';
 
 
-import upServer from './taskServer';
+import upServer from './task/server';
 
 // Tarefa ambiente de desenvolvimento
 const startDev = series(
@@ -36,7 +36,7 @@ const startDev = series(
     compilePug,
     compileSass,
     upServer
-)
+);
 
 // Tarefa build
 const startBuild = series(

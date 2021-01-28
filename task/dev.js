@@ -2,7 +2,7 @@
  * Devs taks
  */
 
-import { pathDev } from './configTasks';
+import { pathDev } from './config';
 
 import autoprefixer from 'gulp-autoprefixer';
 import del from 'del';
@@ -19,7 +19,7 @@ import sourcemaps from 'gulp-sourcemaps';
 /**
  * Clean Folder dev to execute live reload browser.
  */
-const cleanFolderDev = () =>  del(pathDev.clean)
+const cleanFolderDev = () =>  del(pathDev.clean);
 
 
 /**
@@ -27,34 +27,34 @@ const cleanFolderDev = () =>  del(pathDev.clean)
  */
 const copyFonts = () => {
     return gulp.src(pathDev.fonts[0])
-        .pipe(gulp.dest(pathDev.fonts[1]))
-}
+        .pipe(gulp.dest(pathDev.fonts[1]));
+};
 
 /**
  * Copy img to folder dev
  */
 const copyImg = () => {
     return gulp.src(pathDev.img[0])
-        .pipe(gulp.dest(pathDev.img[1]))
-}
+        .pipe(gulp.dest(pathDev.img[1]));
+};
 
 /**
  * Copy mocks to folder dev
  */
 const copyMocks = () => {
     return gulp.src(pathDev.mocks[0])
-        .pipe(gulp.dest(pathDev.mocks[1]))
-}
+        .pipe(gulp.dest(pathDev.mocks[1]));
+};
 
 /**
  * Copy js to folder dev
  */
 const copyJs = () => {
     return gulp.src(pathDev.js[0])
-      .pipe(gulpBabel())
-      .pipe(gulpRename(pathDev.js[1]))
-      .pipe(gulp.dest(pathDev.js[2]))
-}
+        .pipe(gulpBabel())
+        .pipe(gulpRename(pathDev.js[1]))
+        .pipe(gulp.dest(pathDev.js[2]));
+};
 
 /**
  * Linter pug
@@ -65,7 +65,7 @@ const linterPug = () => {
         .pipe(gulpPugLinter({
             reporter: pugLintStylish,
             failAfterError: true
-        }))
+        }));
 };
 
 /**
@@ -75,7 +75,7 @@ const compilePug = () => {
     return gulp.src(pathDev.pug[0])
         .pipe(gulpPug({
             pretty: true
-        })).pipe(gulp.dest(pathDev.pug[1]))
+        })).pipe(gulp.dest(pathDev.pug[1]));
 };
 
 /**
@@ -91,8 +91,8 @@ const compileSass = () => {
         }))
         .pipe(gulpRename(pathDev.sass[1]))
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest(pathDev.sass[2]))
-}
+        .pipe(gulp.dest(pathDev.sass[2]));
+};
 
 export {
     cleanFolderDev,
@@ -103,4 +103,4 @@ export {
     linterPug,
     compilePug,
     compileSass
-}
+};
