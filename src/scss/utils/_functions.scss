@@ -1,9 +1,0 @@
-// Get values of maps
-@function getprops-map($obj, $prop-first, $prop-deep:null) {
-  @if($prop-deep != null) {
-    // Get second level map
-    @return map-get(map-get($obj, $prop-first), $prop-deep);
-  }
-  // Get first level map
-  @return map-get($obj, $prop-first);
-}
