@@ -1,23 +1,18 @@
-// Settings
-@import "./settings/settings";
-
-// Helpers
-@import "./helpers/helpers";
 
 // Generic
-@import "./generic/generic";
+@use "./generic/generic";
 
 // Base
-@import "./base/base";
+@use "./base/base";
 
 // Objects
-@import "./objects/objects";
+@use "./objects";
 
 // Components
 @import "./components/components";
 
 // Layout
-@import "./layout/layout";
+@import "./layout";
 
 // Utils
 @import "./utils/utils";

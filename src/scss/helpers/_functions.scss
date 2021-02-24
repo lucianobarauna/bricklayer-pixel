@@ -1,0 +1,19 @@
+@use '../settings' as st;
+
+@function size-base($multiple) {
+  @return st.$BASE-SIZE * $multiple;
+}
+
+/// Convert px to rem.
+/// @param {*} $target - Font size you want.
+/// @param {*} $context [st.$GL-FONT] - Source context
+@function size-rem($target, $context: st.$GL-FONT) {
+  @return ($target / $context) * 1rem;
+}
+
+/// Convert px to em.
+/// @param {*} $target - Font size you want.
+/// @param {*} $context [st.$GL-FONT] - Source context
+@function size-em($target, $context: st.$GL-FONT) {
+  @return ($target / $context) * 1em;
+}

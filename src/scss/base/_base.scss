@@ -4,6 +4,11 @@
 // blockquotes, a, buttons, etc. Mas lembre-se são estilizações BÁSICAS, nada de
 // estilizar tudo aqui!
 
-* {
-  box-sizing: border-box;
+@use '../settings' as st;
+@use '../helpers' as hl;
+
+:root {
+  --gl-font: #{st.$GL-FONT};
+
+  font-size: var(--gl-font);
 }

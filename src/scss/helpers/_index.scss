@@ -3,5 +3,5 @@
 // a construção de seus layouts. Pode ser qualquer coisa, desde mixins
 // de font-face, até mixins de animações, etc.
 
-@import "./functions";
-@import "./mixings"
+@forward "./functions";
+@forward "./mixings";

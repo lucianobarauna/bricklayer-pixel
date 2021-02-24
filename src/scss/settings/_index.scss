@@ -5,6 +5,6 @@
 // desejadas para o funcionamento do seu framework em si.
 //
 
-@import './colors';
-@import './mediaqueries';
-@import './variables'
+@forward './colors';
+@forward './mediaqueries';
+@forward './variables'

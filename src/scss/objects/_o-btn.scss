@@ -1,0 +1,11 @@
+.o-btn {
+  padding: 50px;
+  background-color: red;
+  border: none;
+}
+
+.o-btn--big {
+  padding: 150px;
+
+  @extend .o-btn;
+}
