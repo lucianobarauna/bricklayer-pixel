@@ -43,6 +43,7 @@
         "node-emoji": "^1.10.0",
         "node-sass": "^4.14.1",
         "puglint-stylish": "^1.0.1",
+        "sass": "^1.32.8",
         "sassdoc": "^2.7.0",
         "stylelint": "^13.7.2",
         "stylelint-config-sass-guidelines": "^7.1.0",

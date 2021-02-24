@@ -12,8 +12,10 @@ import gulpPugLinter from 'gulp-pug-linter';
 import gulpRename from 'gulp-rename';
 import gulpBabel from 'gulp-babel';
 import pugLintStylish from 'puglint-stylish';
-import sass from 'gulp-sass';
+import gulpSass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
+import sass from 'sass';
+gulpSass.compiler = sass;
 
 
 /**
@@ -85,7 +87,7 @@ const compilePug = () => {
 const compileSass = () => {
     return gulp.src(pathDev.sass[0])
         .pipe(sourcemaps.init())
-        .pipe(sass({ errLogToConsole: true }).on('error', sass.logError))
+        .pipe(gulpSass({ errLogToConsole: true }).on('error', gulpSass.logError))
         .pipe(autoprefixer({
             cascade: false
         }))
