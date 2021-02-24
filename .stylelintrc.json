@@ -240,7 +240,7 @@
       "stroke"
     ],
 		"scss/at-rule-no-unknown": true,
-		"scss/at-mixin-pattern": "lms-.+",
+		"scss/at-mixin-pattern": "brk-.+",
 		"scss/map-keys-quotes": "always"
   }
 }
