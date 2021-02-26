@@ -1,11 +1,43 @@
 
 //- Index template
-extends ../templates/l-global
+extends ../templates/global
 block content
-  header
-    p Sou o header
+
+  include ../molecules/o-mx-card
+  include ../organisms/c-mx-header
+  include ../organisms/c-mx-footer
+  -
+    const listCards = [
+      {
+        variation: 'green',
+        btn: {
+          tag: 'button',
+          text: 'Button'
+        }
+      },
+      {
+        variation: null,
+        footerAlign: 'center',
+        btn: {
+          tag: 'a',
+          attr: {'href': '#'},
+          text: 'Button link',
+          variation: 'green'
+        }
+      },
+      {
+        variation: 'black',
+        btn: {
+          tag: 'button',
+          text: 'Button'
+        },
+        footerAlign: 'right' }
+    ]
+
+  +c-mxHeader()
+
   main.l-container
-    h1 Hello world - conteúdo principal
-    button.o-btn BOTÃO
-  footer
-    p Sou o footer
+    each itemCard in listCards
+      +o-mxCard(itemCard)
+
+  +c-mxFooter()

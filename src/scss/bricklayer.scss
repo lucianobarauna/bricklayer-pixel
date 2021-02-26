@@ -9,10 +9,10 @@
 @use "./objects";
 
 // Components
-@import "./components/components";
+@use "./components";
 
 // Layout
-@import "./layout";
+@use "./layout";
 
 // Utils
-@import "./utils/utils";
+@use "./utils/utils";
