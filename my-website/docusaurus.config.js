@@ -1,3 +1,6 @@
+const remarkImages = require('remark-images');
+const rehypeTruncate = require('rehype-truncate');
+
 module.exports = {
     title: 'My Site',
     tagline: 'The tagline of my site',
@@ -85,6 +88,8 @@ module.exports = {
             {
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
+                    remarkPlugins: [remarkImages],
+                    rehypePlugins: [rehypeTruncate],
                     // Please change this to your repo.
                     editUrl:
             'https://github.com/facebook/docusaurus/edit/master/website/',
