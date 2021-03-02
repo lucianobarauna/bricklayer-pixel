@@ -11,6 +11,9 @@ module.exports = {
     favicon: 'img/favicon.ico',
     organizationName: 'facebook', // Usually your GitHub org/user name.
     projectName: 'docusaurus', // Usually your repo name.
+    stylesheets: [
+        'https://fonts.googleapis.com/css2?family=Roboto&display=swap'
+    ],
     themeConfig: {
         navbar: {
             title: 'My Site',

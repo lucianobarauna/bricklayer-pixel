@@ -5,6 +5,8 @@
 import { pathBuild } from './config';
 
 import del from 'del';
+import fsExtra from 'fs-extra';
+
 import gulp from 'gulp';
 import gulpImgMin from 'gulp-imagemin';
 import gulpPug from 'gulp-pug';
@@ -78,7 +80,9 @@ const buildCss = () => convertSassToCss(pathBuild.srcSass, pathBuild.cssMin);
 /**
  * Copy CSS to folder build
  */
-const buildCssComp = () => convertSassToCss(pathBuild.srcSassComp, pathBuild.cssMinComp);
+const buildCssComp = () => convertSassToCss(
+    pathBuild.srcSassComp,
+    pathBuild.cssMinComp);
 
 /**
  * Linter pug
@@ -94,6 +98,12 @@ const buildHtml = () => {
         })).pipe(gulp.dest(pathBuild.distPug));
 };
 
+const moveCssToDocs = () => {
+    return gulp.src('../build/css/bricklayer-components.min.css')
+        .pipe(gulp.dest('../my-website/static/'));
+
+};
+
 
 export {
     buildClean,
@@ -103,5 +113,6 @@ export {
     buildJs,
     buildCss,
     buildCssComp,
-    buildHtml
+    buildHtml,
+    moveCssToDocs
 };

@@ -20,7 +20,8 @@ import {
     buildJs,
     buildCss,
     buildCssComp,
-    buildHtml
+    buildHtml,
+    moveCssToDocs
 } from './task/build';
 
 
@@ -53,7 +54,7 @@ const startBuild = series(
 // Tarefa build components
 const startBuildComp = series(
     startBuild,
-    buildCssComp,
+    buildCssComp
 );
 
 export {

@@ -11,9 +11,15 @@ import gulpRename from 'gulp-rename';
  * @param  {String} srcFile - Path target file scss
  * @param  {String} nameFileMin - Nome que será gerado o arquivo
  */
-export const convertSassToCss = (srcFile, nameFileMin) => {
-    return gulp.src(srcFile)
-        .pipe(sass({ errLogToConsole: true }).on('error', sass.logError))
+export const convertSassToCss = (
+    srcFile,
+    nameFileMin,
+    distFile = pathBuild.distCss) => {
+    console.log(distFile);
+
+    return gulp.src(srcFile, {
+        allowEmpty: true
+    }).pipe(sass({ errLogToConsole: true }).on('error', sass.logError))
         .pipe(autoprefixer({
             cascade: false
         }))
@@ -22,5 +28,5 @@ export const convertSassToCss = (srcFile, nameFileMin) => {
             debug: true
         }))
         .pipe(gulpRename(nameFileMin))
-        .pipe(gulp.dest(pathBuild.distCss));
+        .pipe(gulp.dest(distFile));
 };
