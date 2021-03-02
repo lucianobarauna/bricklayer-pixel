@@ -1,13 +1,13 @@
 const fs = require('fs-extra');
+const path = require('path');
 
 // fsExtra.copy(
 //     './../task/config.js',
 //     './../scripts');
 
+const targetFile = path.dirname(__dirname, '/src/assets/js/main.js');
+const distFile = path.dirname(__dirname, '/scripts');
 // Sync:
-try {
-    fs.copySync('/task/config.js', '/scripts');
-    console.log('success!');
-} catch (err) {
-    console.error(err);
-}
+// fs.copy(targetFile, distFile);
+fs.mkdir('../scripts/jujuba');
+
