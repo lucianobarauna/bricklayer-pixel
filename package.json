@@ -9,6 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npm run gulp startDev",
     "build": "npm run gulp startBuild",
+    "build:comp": "npm run gulp startBuildComp",
     "postinstall": "node ./task/hello-world",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"

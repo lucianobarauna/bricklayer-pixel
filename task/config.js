@@ -65,6 +65,8 @@ const pathBuild = {
         './build/js'
     ],
     srcSass: './src/scss/bricklayer.scss',
+    srcSassComp: './src/scss/bricklayer-components.scss',
+    cssMinComp: 'bricklayer-components.min.css',
     cssMin: 'bricklayer.min.css',
     distCss: './build/css/',
     srcPug: './src/pug/pages/*.pug',
@@ -75,4 +77,4 @@ export {
     pathDev,
     pathServer,
     pathBuild
-}
+};

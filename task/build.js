@@ -4,8 +4,6 @@
 
 import { pathBuild } from './config';
 
-import autoprefixer from 'gulp-autoprefixer';
-import csso from 'gulp-csso';
 import del from 'del';
 import gulp from 'gulp';
 import gulpImgMin from 'gulp-imagemin';
@@ -14,7 +12,8 @@ import gulpPugLinter from 'gulp-pug-linter';
 import pugLintStylish from 'puglint-stylish';
 import gulpRename from 'gulp-rename';
 import gulpUglify from 'gulp-uglify-es';
-import sass from 'gulp-sass';
+
+import { convertSassToCss } from './helpers';
 
 /**
  * Clean folder build.
@@ -74,19 +73,12 @@ const buildJs = () => {
 /**
  * Copy CSS to folder build
  */
-const buildCss = () => {
-    return gulp.src(pathBuild.srcSass)
-        .pipe(sass({ errLogToConsole: true }).on('error', sass.logError))
-        .pipe(autoprefixer({
-            cascade: false
-        }))
-        .pipe(csso({
-            restructure: true,
-            debug: true
-        }))
-        .pipe(gulpRename(pathBuild.cssMin))
-        .pipe(gulp.dest(pathBuild.distCss));
-};
+const buildCss = () => convertSassToCss(pathBuild.srcSass, pathBuild.cssMin);
+
+/**
+ * Copy CSS to folder build
+ */
+const buildCssComp = () => convertSassToCss(pathBuild.srcSassComp, pathBuild.cssMinComp);
 
 /**
  * Linter pug
@@ -110,5 +102,6 @@ export {
     buildMocks,
     buildJs,
     buildCss,
+    buildCssComp,
     buildHtml
 };
