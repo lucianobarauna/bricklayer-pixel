@@ -1,0 +1,11 @@
+@use '../helpers' as hl;
+
+.c-header {
+  padding: hl.size-rem(50px);
+  text-align: center;
+}
+
+.c-header__title {
+  margin-bottom: hl.size-rem(20px);
+  font-weight: 500;
+}

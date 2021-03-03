@@ -1,0 +1,43 @@
+
+//- Index template
+extends ../templates/global
+block content
+
+  include ../molecules/o-mx-card
+  include ../organisms/c-mx-header
+  include ../organisms/c-mx-footer
+  -
+    const listCards = [
+      {
+        variation: 'green',
+        btn: {
+          tag: 'button',
+          text: 'Button'
+        }
+      },
+      {
+        variation: null,
+        footerAlign: 'center',
+        btn: {
+          tag: 'a',
+          attr: {'href': '#'},
+          text: 'Button link',
+          variation: 'green'
+        }
+      },
+      {
+        variation: 'black',
+        btn: {
+          tag: 'button',
+          text: 'Button'
+        },
+        footerAlign: 'right' }
+    ]
+
+  +c-mxHeader()
+
+  main.l-container
+    each itemCard in listCards
+      +o-mxCard(itemCard)
+
+  +c-mxFooter()

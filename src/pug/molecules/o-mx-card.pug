@@ -1,0 +1,32 @@
+
+mixin o-mxCard(config = {})
+  include ../atoms/o-mx-btn
+
+  - let { variation, footerAlign, btn } = config;
+  - let setVariation = null;
+  - let setFooterAlign = null;
+
+  case variation
+    when 'green'
+      - setVariation = 'o-card--green'
+
+    when 'black'
+      - setVariation = 'o-card--black'
+
+  case footerAlign
+    when 'center'
+      - setFooterAlign = 'u-txtcenter';
+
+    when 'right'
+      - setFooterAlign = 'u-txtright';
+
+  // o-card
+  article.o-card(class=setVariation)
+    header.o-card__header
+      h2.o-card__title Card de exemplo
+
+    p.o-card__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum saepe ex sequi odit voluptates ea at voluptatum obcaecati reprehenderit facere, reiciendis quasi est nemo, deleniti corporis! Maxime ducimus odio vel.
+
+    footer.o-card__footer(class=setFooterAlign)
+      +o-mxBtn(btn)
+  // !o-card

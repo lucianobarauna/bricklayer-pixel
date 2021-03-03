@@ -1,0 +1,16 @@
+.l-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.l-container .o-card {
+  flex: 1;
+  margin-right: 20px;
+  margin-left: 20px;
+
+  @media (max-width: 1080px) {
+    margin-bottom: 40px;
+  }
+}
