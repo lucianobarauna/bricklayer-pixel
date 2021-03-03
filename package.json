@@ -1,6 +1,6 @@
 {
   "name": "bricklayer-pixel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Boilerplate with Pug, JS and Sass",
   "private": true,
   "main": "index.js",
@@ -44,7 +44,6 @@
     "gulp-uglify-es": "^1.0.4",
     "husky": "^3.0.5",
     "node-emoji": "^1.10.0",
-    "node-sass": "^4.14.1",
     "puglint-stylish": "^1.0.1",
     "sass": "^1.32.8",
     "sassdoc": "^2.7.0",
