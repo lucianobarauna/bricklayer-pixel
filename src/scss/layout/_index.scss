@@ -1,10 +1,11 @@
+//
 // Layout
-// Aqui ficam os estilos relacionadas a posicionamento. Em outras palavras,
-// as propriedades que afetam a posição de um bloco ou seus elementos devem ser
-// abstraídas em uma classe separada para reutilização.
-// Além também de conter estilos para cada página específica.
-
+// @author - Luciano Baraúna
 // Namespace: .l-
+//
+// Aqui ficam os estilos relacionadas a posicionamento.
+// Além também de conter estilos para cada página específica.
+//
 
-@forward './l-wrap';
-@forward './l-container';
+@forward "./l-wrap";
+@forward "./l-container";
