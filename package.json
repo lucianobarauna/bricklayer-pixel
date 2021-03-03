@@ -10,6 +10,7 @@
     "dev": "npm run gulp startDev",
     "build": "npm run gulp startBuild",
     "build:comp": "npm run gulp startBuildComp",
+    "movedocs:css": "yarn build:comp && node ./moveCssToDocs.js",
     "postinstall": "node ./task/hello-world",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
