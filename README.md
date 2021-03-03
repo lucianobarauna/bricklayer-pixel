@@ -78,6 +78,7 @@ cards específicos como aqueles incluindo imagens, headers, footers e etc.
 
 #### Layout
 **Lembrando que essa pasta é uma organização que achei relevante ser colocada**
+
 Aqui ficam os estilos relacionadas a posicionamento. Em outras palavras, as propriedades que afetam a posição de um bloco ou seus elementos devem ser abstraídas em uma classe separada para reutilização.
 
 Além também de conter estilos para cada página específica.
