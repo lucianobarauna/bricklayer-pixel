@@ -6,14 +6,11 @@
   "main": "index.js",
   "scripts": {
     "gulp": "gulp",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm run gulp startDev",
+    "start": "npm run gulp startDev",
     "build": "npm run gulp startBuild",
     "build:comp": "npm run gulp startBuildComp",
     "movedocs:css": "yarn build:comp && node ./moveCssToDocs.js",
-    "postinstall": "node ./task/hello-world",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "postinstall": "node ./task/hello-world"
   },
   "author": "",
   "repository": {
@@ -55,5 +52,10 @@
     "stylelint-config-sass-guidelines": "^7.1.0",
     "stylelint-config-standard": "^20.0.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "node ./task/hello-world"
+    }
+  }
 }
