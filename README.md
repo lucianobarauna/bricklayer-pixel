@@ -6,7 +6,7 @@ Um boilerplate simples para criar projetos sem frameworks usando Gulp, Pug e Sas
 
 ## Configurações
 As configurações do projeto para executar as tarefas do `gulp` encontram-se
-no arquivo `./task/config.js`.
+no arquivo [./task/config.js](./task/config.js).
 
 ## Tarefas
 - `start`: Inicia o projeto,
