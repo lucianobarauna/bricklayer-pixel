@@ -2,7 +2,7 @@
 Um boilerplate simples para criar projetos sem frameworks usando Gulp, Pug e Sass.
 
 ## Requesitos
-- Node 14.*
+- Node 12.*
 
 ## Configurações
 As configurações do projeto para executar as tarefas do `gulp` encontram-se

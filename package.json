@@ -1,6 +1,6 @@
 {
   "name": "bricklayer-pixel",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Boilerplate with Pug, JS and Sass",
   "private": true,
   "main": "index.js",
