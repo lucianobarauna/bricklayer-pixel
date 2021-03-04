@@ -1,0 +1,32 @@
+
+mixin c-mxCard(config = {})
+  include ../atoms/c-mx-btn
+
+  - let { variation, footerAlign, btn } = config;
+  - let setVariation = null;
+  - let setFooterAlign = null;
+
+  case variation
+    when 'green'
+      - setVariation = 'c-card--green'
+
+    when 'black'
+      - setVariation = 'c-card--black'
+
+  case footerAlign
+    when 'center'
+      - setFooterAlign = 'u-txtcenter';
+
+    when 'right'
+      - setFooterAlign = 'u-txtright';
+
+  // c-card
+  article.c-card(class=setVariation)
+    header.c-card__header
+      h2.c-card__title Card de exemplo
+
+    p.c-card__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum saepe ex sequi odit voluptates ea at voluptatum obcaecati reprehenderit facere, reiciendis quasi est nemo, deleniti corporis! Maxime ducimus odio vel.
+
+    footer.c-card__footer(class=setFooterAlign)
+      +c-mxBtn(btn)
+  // !c-card

@@ -1,6 +1,6 @@
 @use "../helpers" as hl;
 
-.o-btn-jujuba {
+.c-btn {
   display: inline-block;
   padding: hl.size-rem(15px) hl.size-rem(25px);
   font: 500 hl.size-rem(14px) "Roboto";
@@ -31,7 +31,7 @@
   }
 }
 
-.o-btn--green {
+.c-btn--green {
   --btn-cl: #fff;
   --btn-bgc: #4ca551;
   --btn-bdc: #5da461;

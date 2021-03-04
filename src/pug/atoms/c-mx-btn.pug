@@ -1,0 +1,9 @@
+mixin c-mxBtn(config = {})
+  - let { tag, text, attr, variation } = config;
+  - let setVariation = undefined;
+
+  case variation
+    when 'green'
+      - setVariation = 'c-btn--green'
+
+  #{tag}&attributes(attr).c-btn(class=setVariation) #{text}

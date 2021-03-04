@@ -1,10 +1,7 @@
 // Utils
-// Os utilitários são regras completas de responsabilidade única que têm uma
-// tarefa muito específica e direcionada. Também é bastante comum que as
-// declarações dessas regras sejam levadas a cabo de !important forma a garantir
-// que superem outras menos específicas.
-
+// @author - Luciano Baraúna
 // Namespace: .u-
+//
 
 .u-hidden {
   display: none !important;

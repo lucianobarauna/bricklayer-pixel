@@ -1,6 +1,6 @@
 @use "../helpers" as hl;
 
-.o-card {
+.c-card {
   --card-title-cl: #696868;
 
   padding: 40px;
@@ -11,32 +11,32 @@
   box-shadow: -1px 20px 40px -13px rgba(0, 0, 0, .29);
 }
 
-.o-card__title {
+.c-card__title {
   margin-bottom: hl.size-rem(5px);
   font-size: hl.size-rem(28px);
   font-weight: 500;
   color: var(--card-title-cl);
 }
 
-.o-card__text {
+.c-card__text {
   font-size: hl.size-rem(14px);
   line-height: hl.size-em(22px);
 }
 
-.o-card__footer {
+.c-card__footer {
   margin-top: hl.size-rem(30px);
 }
 
 // Variações
 
-.o-card--green {
+.c-card--green {
   --card-bgc: #4ca551;
   --card-bdc: #5da461;
   --card-cl: #fff;
   --card-title-cl: inherit;
 }
 
-.o-card--black {
+.c-card--black {
   --card-bgc: #111;
   --card-cl: #bbb;
   --card-title-cl: #fff;;

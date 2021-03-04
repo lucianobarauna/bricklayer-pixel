@@ -63,15 +63,15 @@ Aqui ficarão as estilizações básicas, a última camada que veremos seletores
 
 Portanto aqui ficarão estilos para os headings `h1-h6`, `blockquotes`, `a`, `buttons`, etc. Mas lembre-se são estilizações BÁSICAS, nada de estilizar tudo aqui!
 
-#### Objects
-Seguindo os princípios de OOCSS (CSS Orientado a Objetos), aqui é onde iremos ter nossos pequenos "objetos", que nada mais são que pequenos pedaços da interface, em geral, padrões que se repetem por todo o site e que podem ter ou não uma camada visual por cima.
+#### Componentes
+Seguindo os princípios de OOCSS (CSS Orientado a Objetos), aqui é onde iremos ter nossos pequenos "componentes", que nada mais são que pequenos pedaços da interface, em geral, padrões que se repetem por todo o site e que podem ter ou não uma camada visual por cima.
 
 Aqui é onde fazemos os padrões de botões, listas, paineis, etc. Nesse momento, só é permitido também o uso de classes.
 
-#### Components
-Aqui como o nome já diz, teremos nossos componentes já mais específicos.
+#### Objetos
+Aqui como o nome já diz, teremos nossos objetos já mais específicos.
 
-De acordo com o (RSCSS ou BEM), aqui que vamos jogar todos aqueles componentes/elementos criados. Enquanto nos objetos nós tentamos abstrair o máximo possível, para ter muitos objetos reutilizáveis e genéricos, aqui nós vamos ser específicos ao criar os componentes, mas respeitando as regras do (RSCSS ou BEM) de especificidade e também não colocando positions ou outras propriedades que engessem muito o componente a ponto dele não ser reutilizável.
+De acordo com o (RSCSS ou BEM), aqui que vamos jogar todos aqueles componentes/elementos criados. Enquanto nos objetos nós tentamos abstrair o máximo possível, para ter muitos objetos reutilizáveis e genéricos, aqui nós vamos ser específicos ao criar os objetos, mas respeitando as regras do (RSCSS ou BEM) de especificidade e também não colocando positions ou outras propriedades que engessem muito o objeto a ponto dele não ser reutilizável.
 
 Normalmente, aqui ficarão listas específicas como de produtos,
 cards específicos como aqueles incluindo imagens, headers, footers e etc.
@@ -96,6 +96,32 @@ Namespaces | Significado |
  `.o-foo__bar` | objetos
  `.l-foo__bar` | layouts
  `.u-foo__bar` | utilitários
+ `.s-foo__bar` | escopo
+ `.is-bar` e `.has-foo` | algum estado
+ `._bar__foo` e `._foo__bar` | hack
+ `.js-bar__foo`| classe para JS
+ `.qa-bar__foo`| classe para testes de QA
+#### Namespace: .c-
+Significa que algo é um componente. Esta é uma parte da IU concreta e específica da implementação. Todas as alterações feitas em seus estilos devem ser detectáveis ​​no contexto em que você está olhando. A modificação desses estilos deve ser segura e sem efeitos colaterais.
+
+#### Namespace: .o-
+Significa que algo é um objeto e que pode ser usado em qualquer número de contextos não relacionados àquele em que você pode vê-lo atualmente.
+Fazer modificações nesses tipos de classe pode ter efeitos indiretos em muitos outros lugares não relacionados.
+#### Namespace: .l-
+É usado para definir elementos numa página. Ditam a estrutura de uma página, posicionamento dos elementos e etc...
+
+#### Namespace: .u-
+Significa que esta classe é uma classe de utilitário. Ele tem uma função muito específica (geralmente fornecendo apenas uma declaração) e não deve ser vinculado ou alterado. Ele pode ser reutilizado e não está vinculado a nenhuma parte específica da IU.
+#### Namespace: .s-
+Significa que uma classe cria um novo contexto de estilo ou escopo. Semelhante a um layout, mas não necessariamente cosmético, eles devem ser usados ​​com moderação - podem estar sujeitos a abusos e levar a CSS de baixa qualidade se não forem usados ​​com sabedoria. Geralmente é utilizando para conteúdos que venham de um publicador.
+#### Namespace: .is- ou .has-
+Significa que a parte da IU em questão atualmente tem um estilo específico devido a um estado ou condição. Este namespace stateful é lindo e vem do SMACSS. Ele nos diz que o DOM atualmente tem um estilo temporário, opcional ou de curta duração aplicado a ele devido a um determinado estado que está sendo invocado.
+#### Namespace: ._
+Diga que essa class é a pior das piores - um hack! Às vezes, embora raramente, precisamos adicionar uma classe em nossa marcação para forçar algo a funcionar. Se fizermos isso, precisamos que os outros saibam que esta classe é menos do que ideal e, esperançosamente, temporária (ou seja, não se vincule a ela).
+#### Namespace: .js-
+Significa que essa parte do DOM tem algum comportamento agindo sobre ela e que o JavaScript se liga a ela para fornecer esse comportamento.
+#### Namespace: .qa-
+Significa que uma equipe de controle de qualidade ou engenharia de teste está executando um teste de IU automatizado que precisa localizar ou vincular a essas partes do DOM. Como o namespace JavaScript, ele basicamente reserva ganchos no DOM para fins não CSS.
 
 Um [post](https://zellwk.com/blog/css-architecture-1/) que explica essa união com BEM e Namespaces.
 
