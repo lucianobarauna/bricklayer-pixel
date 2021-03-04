@@ -1,9 +1,0 @@
-mixin o-mxBtn(config = {})
-  - let { tag, text, attr, variation } = config;
-  - let setVariation = undefined;
-
-  case variation
-    when 'green'
-      - setVariation = 'o-btn--green'
-
-  #{tag}&attributes(attr).o-btn(class=setVariation) #{text}

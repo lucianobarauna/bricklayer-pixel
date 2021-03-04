@@ -3,8 +3,6 @@
 // @author - Luciano Baraúna
 // Namespace: .c-
 //
-// Aqui como o nome já diz, teremos nossos componentes já mais // específicos.
-//
 
-@forward "./c-header";
-@forward "./c-footer";
+@forward "c-btn";
+@forward "c-card";

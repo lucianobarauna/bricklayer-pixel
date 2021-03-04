@@ -3,9 +3,9 @@
 extends ../templates/global
 block content
 
-  include ../molecules/o-mx-card
-  include ../organisms/c-mx-header
-  include ../organisms/c-mx-footer
+  include ../molecules/c-mx-card
+  include ../organisms/o-mx-header
+  include ../organisms/o-mx-footer
   -
     const listCards = [
       {
@@ -34,10 +34,10 @@ block content
         footerAlign: 'right' }
     ]
 
-  +c-mxHeader()
+  +o-mxHeader()
 
   main.l-container
     each itemCard in listCards
-      +o-mxCard(itemCard)
+      +c-mxCard(itemCard)
 
-  +c-mxFooter()
+  +o-mxFooter()
