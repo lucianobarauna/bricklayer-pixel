@@ -14,7 +14,6 @@ no arquivo [./task/config.js](./task/config.js).
 - `build:comp`: Gera build com `CSS` dos componentes separados para serem utilizadas na documentação,
 - `movedocs:css`: Move o `CSS` gerado dos componentes para a pasta da documentação,
 - `postinstall`: Hook do nodejs que você roda algum script após alguma instalação.
-- `pre-commit`: Hook do Husky para rodar algo antes de commitar.
 
 
 ## Iniciando o porjeto
@@ -47,6 +46,9 @@ A estrutura de pastas está de acordo com o modelo [Atomic Design](atomicdesign.
 
 ## Sobre o CSS
 O projeto utiliza a arquitetura [ITCSS](https://willianjusten.com.br/organizando-seu-css-com-itcss/) e as metodologia [BEM](http://getbem.com/) junto com [Namespaces](https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/).
+
+## Hooks
+O projeto utiliza husky para criar os hooks em certas ações. Temos um exemplo quando vc commita algo. Caso precise configura algo consulte a [documentação](https://github.com/typicode/husky)
 
 ### A estrutura de pastas do ITCSS:
 

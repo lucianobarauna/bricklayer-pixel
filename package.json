@@ -1,6 +1,6 @@
 {
   "name": "bricklayer-pixel",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Boilerplate with Pug, JS and Sass",
   "private": true,
   "main": "index.js",
@@ -11,7 +11,8 @@
     "build:comp": "npm run gulp startBuildComp",
     "movedocs:css": "yarn build:comp && node ./moveCssToDocs.js",
     "postinstall": "node ./task/hello-world",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "echo 'olá mundo'"
   },
   "author": "",
   "repository": {
@@ -43,19 +44,14 @@
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify-es": "^1.0.4",
+    "husky": "^6.0.0",
     "node-emoji": "^1.10.0",
     "puglint-stylish": "^1.0.1",
     "sass": "^1.32.8",
     "sassdoc": "^2.7.0",
     "stylelint": "^13.7.2",
     "stylelint-config-sass-guidelines": "^7.1.0",
-    "stylelint-config-standard": "^20.0.0",
-    "husky": "^6.0.0"
+    "stylelint-config-standard": "^20.0.0"
   },
-  "dependencies": {},
-  "husky": {
-    "hooks": {
-      "pre-commit": "node ./task/hello-world"
-    }
-  }
+  "dependencies": {}
 }
