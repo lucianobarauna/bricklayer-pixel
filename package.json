@@ -11,7 +11,8 @@
     "build:comp": "npm run gulp startBuildComp",
     "movedocs:css": "yarn build:comp && node ./moveCssToDocs.js",
     "postinstall": "node ./task/hello-world",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "echo 'olá mundo'"
   },
   "author": "",
   "repository": {
