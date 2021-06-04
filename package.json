@@ -53,10 +53,5 @@
     "stylelint-config-sass-guidelines": "^7.1.0",
     "stylelint-config-standard": "^20.0.0"
   },
-  "dependencies": {},
-  "husky": {
-    "hooks": {
-      "pre-commit": "node ./task/hello-world"
-    }
-  }
+  "dependencies": {}
 }
