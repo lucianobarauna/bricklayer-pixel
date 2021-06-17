@@ -10,7 +10,7 @@
     "build": "npm run gulp startBuild",
     "build:comp": "npm run gulp startBuildComp",
     "movedocs:css": "yarn build:comp && node ./moveCssToDocs.js",
-    "postinstall": "node ./task/hello-world",
+    "postinstall": "node copy-vendors",
     "prepare": "husky install",
     "test": "echo 'olá mundo'"
   },
@@ -28,6 +28,7 @@
     "babel-loader": "^8.2.2",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "bootstrap": "^5.0.1",
     "browser-sync": "^2.26.14",
     "chalk": "^4.1.0",
     "del": "^6.0.0",
