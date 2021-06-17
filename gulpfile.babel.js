@@ -20,8 +20,7 @@ import {
     buildJs,
     buildCss,
     buildCssComp,
-    buildHtml,
-    moveCssToDocs
+    buildHtml
 } from './task/build';
 
 
