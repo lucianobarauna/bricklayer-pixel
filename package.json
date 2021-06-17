@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "gulp": "gulp",
-    "start": "npm run gulp startDev",
+    "dev": "npm run gulp startDev",
     "build": "npm run gulp startBuild",
     "build:comp": "npm run gulp startBuildComp",
     "movedocs:css": "yarn build:comp && node ./moveCssToDocs.js",
