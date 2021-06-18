@@ -78,13 +78,6 @@ const buildJs = () => {
 const buildCss = () => convertSassToCss(pathBuild.srcSass, pathBuild.cssMin);
 
 /**
- * Copy CSS to folder build
- */
-const buildCssComp = () => convertSassToCss(
-    pathBuild.srcSassComp,
-    pathBuild.cssMinComp);
-
-/**
  * Linter pug
  * Check linter pug
  */
@@ -112,7 +105,6 @@ export {
     buildMocks,
     buildJs,
     buildCss,
-    buildCssComp,
     buildHtml,
     moveCssToDocs
 };

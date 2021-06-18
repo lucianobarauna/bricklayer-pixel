@@ -19,7 +19,6 @@ import {
     buildMocks,
     buildJs,
     buildCss,
-    buildCssComp,
     buildHtml
 } from './task/build';
 
@@ -52,8 +51,7 @@ const startBuild = series(
 
 // Tarefa build components
 const startBuildComp = series(
-    startBuild,
-    buildCssComp
+    startBuild
 );
 
 export {
