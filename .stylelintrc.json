@@ -1,4 +1,5 @@
 {
+  "ignoreFiles": ["./build/css/*.css", "./dev/css/*.css"],
 	"plugins": [
 		"stylelint-order",
 		"stylelint-scss"

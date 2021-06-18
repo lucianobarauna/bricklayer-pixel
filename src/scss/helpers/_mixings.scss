@@ -1,6 +1,3 @@
-@use "sass:map";
-@use '../settings' as st;
-
 /// Set font
 /// Applies the default design font to the element
 /// @param {String} $font - Typography name
@@ -19,26 +16,5 @@
 
   @else {
     font-family: Helvetica, sans-serif;
-  }
-}
-
-/// Set mediaquery
-/// Applies a mediaquery of the project to the element
-/// @author Luciano Baraúna
-/// @param {Propety} $media-name - First property is the name of media.
-/// @param {Propety} $size [null] - Second property is the average value
-/// @param {Map} $mapconfig - Map of media querys
-
-@mixin brk-set-media($media-name, $size:null, $mapconfig: st.$brk-media) {
-  $string-media: "#{$media-name}-width";
-  $type-media: map.get($mapconfig, $media-name);
-  $without-property: not map.has-key($mapconfig, $media-name);
-
-  @if ($without-property) {
-    @error "Propety not found ===> #{$prorpety-first}";
-  }
-
-  @media ($string-media: map-get($type-media, $size)) {
-    @content;
   }
 }

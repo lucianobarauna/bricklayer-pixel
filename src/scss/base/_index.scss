@@ -1,0 +1,15 @@
+//
+// Base
+// @author - Luciano Baraúna
+// Aqui ficarão as estilizações básicas, a última camada que //// veremos seletores em tags diretamente.
+//
+
+:root {
+  --gl-font: #{$GL-FONT};
+
+  font-size: var(--gl-font);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}

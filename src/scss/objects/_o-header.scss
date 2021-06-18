@@ -1,11 +1,9 @@
-@use '../helpers' as hl;
-
 .o-header {
-  padding: hl.size-rem(50px);
+  padding: size-rem(50px);
   text-align: center;
 }
 
 .o-header__title {
-  margin-bottom: hl.size-rem(20px);
+  margin-bottom: size-rem(20px);
   font-weight: 500;
 }
