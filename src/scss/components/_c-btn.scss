@@ -1,40 +1,6 @@
 .c-btn {
-  display: inline-block;
-  padding: size-rem(15px) size-rem(25px);
-  font: 500 size-rem(14px) "Roboto";
-  color: var(--btn-cl, #111);
-  text-decoration: none;
-  text-transform: uppercase;
-  background-color: var(--btn-bgc, #fff);
-  border: solid 1px var(--btn-bdc, #dadada);
-  border-radius: 5px;
-  outline: none;
-  opacity: 1;
-  transition: all .3s ease-out;
-
   &:hover,
   &:active {
-    --btn-cl: #fff;
-    --btn-bgc: blue;
-    --btn-bdc: #072c93;
-
-    cursor: pointer;
-    transition: all .5s ease;
-  }
-
-  &:active,
-  &:focus {
     opacity: .5;
-    transition: all .2s ease-in;
-  }
-}
-
-.c-btn--green {
-  --btn-cl: #fff;
-  --btn-bgc: #4ca551;
-  --btn-bdc: #5da461;
-
-  @include media-breakpoint-up(md) {
-    --btn-bgc: red;
   }
 }
