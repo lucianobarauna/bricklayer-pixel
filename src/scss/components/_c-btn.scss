@@ -1,9 +1,7 @@
-@use "../helpers" as hl;
-
 .c-btn {
   display: inline-block;
-  padding: hl.size-rem(15px) hl.size-rem(25px);
-  font: 500 hl.size-rem(14px) "Roboto";
+  padding: size-rem(15px) size-rem(25px);
+  font: 500 size-rem(14px) "Roboto";
   color: var(--btn-cl, #111);
   text-decoration: none;
   text-transform: uppercase;
@@ -35,4 +33,8 @@
   --btn-cl: #fff;
   --btn-bgc: #4ca551;
   --btn-bdc: #5da461;
+
+  @include media-breakpoint-up(md) {
+    --btn-bgc: red;
+  }
 }

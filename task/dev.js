@@ -14,8 +14,8 @@ import gulpBabel from 'gulp-babel';
 import pugLintStylish from 'puglint-stylish';
 import gulpSass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
-import sass from 'sass';
-gulpSass.compiler = sass;
+// import sass from 'sass';
+// gulpSass.compiler = sass;
 
 
 /**

@@ -1,18 +1,22 @@
+@import "./settings/index";
+
+// Helpers
+@import "./helpers/index";
 
 // Generic
-@use "./generic/generic";
+@import "./generic/index";
 
 // Base
-@use "./base/base";
+@import "./base/index";
 
 // Objects
-@use "./objects";
+@import "./objects/index";
 
 // Components
-@use "./components";
+@import "./components/index";
 
 // Layout
-@use "./layout";
+@import "./layout/index";
 
 // Utils
-@use "./utils/utils";
+@import "./utils/utils"

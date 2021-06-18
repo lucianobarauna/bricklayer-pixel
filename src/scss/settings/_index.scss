@@ -3,6 +3,7 @@
 // @author - Luciano Baraúna
 //
 
-@forward './colors';
-@forward './mediaqueries';
-@forward './variables'
+@import "../../vendor/bootsrap-custom";
+@import "./colors";
+@import "./mediaqueries";
+@import "./variables"
