@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @function size-base($multiple) {
   @return $BASE-SIZE * $multiple;
 }
@@ -6,12 +8,12 @@
 /// @param {*} $target - Font size you want.
 /// @param {*} $context [$GL-FONT] - Source context
 @function size-rem($target, $context: $GL-FONT) {
-  @return ($target / $context) * 1rem;
+  @return math.div($target, $context) * 1rem;
 }
 
 /// Convert px to em.
 /// @param {*} $target - Font size you want.
 /// @param {*} $context [$GL-FONT] - Source context
 @function size-em($target, $context: $GL-FONT) {
-  @return ($target / $context) * 1em;
+  @return math.div($target, $context) * 1em;
 }
