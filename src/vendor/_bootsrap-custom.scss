@@ -1,17 +1,22 @@
 // Boostrap Custom.scss
-// Customização do bootstrap
+// Customization of boostrap
 
-
+// ==========================================================================
 // Configuration
-// Override config boostrap;
-
-// Bootstrap
+// ==========================================================================
 @import "./bootstrap/scss/functions";
+
+// Default variable overrides
+$body-bg: #000;
+$body-color: #fff;
+
 @import "./bootstrap/scss/variables";
 @import "./bootstrap/scss/mixins";
 @import "./bootstrap/scss/utilities";
 
+// ==========================================================================
 // Layout & components
+// ==========================================================================
 @import "./bootstrap/scss/root";
 @import "./bootstrap/scss/reboot";
 @import "./bootstrap/scss/type";
@@ -43,8 +48,12 @@
 @import "./bootstrap/scss/spinners";
 @import "./bootstrap/scss/offcanvas";
 
+// ==========================================================================
 // Helpers
+// ==========================================================================
 @import "./bootstrap/scss/helpers";
 
+// ==========================================================================
 // Utilities
+// ==========================================================================
 @import "./bootstrap/scss/utilities/api"
